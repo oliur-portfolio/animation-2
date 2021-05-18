@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <title>Animation Effect</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="" />
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            ::selection {
+                background: #fff;
+                color: #000;
+            }
+
+            body {
+                height: 100vh;
+                line-height: 1;
+                background: #000;
+                text-transform: uppercase;
+                font-family: "Roboto", sans-serif;
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .animation-area {
+                margin-right: 15vw;
+                padding-top: 50px;
+                padding-left: 80px;
+                text-align: right;
+                overflow: hidden;
+            }
+
+            .main-text h2 {
+                font-size: 80px;
+                color: #fff;
+            }
+
+            @media only screen and (max-width: 1199px) {
+                .animation-area {
+                    margin-right: 10vw;
+                }
+
+                .main-text h2 {
+                    font-size: 64px;
+                }
+            }
+
+            @media only screen and (max-width: 991px) {
+                .main-text h2 {
+                    font-size: 56px;
+                }
+            }
+
+            @media only screen and (max-width: 767px) {
+                .main-text h2 {
+                    font-size: 42px;
+                }
+            }
+
+            @media only screen and (max-width: 575px) {
+                .main-text h2 {
+                    font-size: 30px;
+                }
+
+                .single-word {
+                    margin: 0 3px;
+                }
+            }
+
+            @media only screen and (max-width: 450px) {
+                .main-text h2 {
+                    font-size: 28px;
+                    color: #fff;
+                }
+            }
+
+            @media only screen and (max-width: 400px) {
+                .main-text h2 {
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Main Animation -->
+        <div class="animation-area">
+            <div class="main-text">
+                <h2 class="single-line">Modern Transition</h2>
+                <h2 class="single-line">And Color</h2>
+                <h2 class="single-line">Combinations</h2>
+            </div>
+        </div>
+        <!-- Main Animation -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+        <script>
+            var animation1 = gsap.timeline({
+                delay: 0.3,
+                repeat: -1,
+                repeatDelay: 0.5,
+            });
+
+            animation1.from(".single-line", {
+                duration: 0.8,
+                x: 530,
+                autoAlpha: 0,
+                stagger: 0.2,
+                ease: "back.out(1.7)",
+            }),
+                animation1.to(".single-line", {
+                    duration: 0.3,
+                    y: -10,
+                    stagger: 0.15,
+                    ease: "sine.out",
+                });
+        </script>
+    </body>
+</html>
